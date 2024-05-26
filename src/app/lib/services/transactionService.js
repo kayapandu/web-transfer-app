@@ -1,8 +1,8 @@
+'use client';
+
 import ApiService from "./api";
 
-const token = localStorage.getItem('userToken');
-
-console.log('xxx', token);
+const token = global?.window !== undefined ? window?.localStorage?.getItem('userToken') : "";
 
 const HEADERS = {
   'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ const HEADERS = {
   'Authorization' : `Bearer ${token}`,
 };
 
-const client = new ApiService({ baseURL: 'http://localhost:9001', headers: HEADERS });
+const client = new ApiService({ headers: HEADERS });
 const transactionService = {};
 
 

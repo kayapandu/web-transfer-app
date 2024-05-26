@@ -1,6 +1,6 @@
 import ApiService from "./api";
 
-const client = new ApiService({ baseURL: 'https://express-flip-846kq5f6h-kayapandus-projects.vercel.app' });
+const client = new ApiService({});
 const authService = {};
 
 authService.login = (payload) => client.post('/login', payload);

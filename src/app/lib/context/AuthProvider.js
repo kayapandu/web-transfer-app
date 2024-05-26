@@ -12,8 +12,10 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    const currentToken = localStorage.getItem('userToken');
-    setToken(currentToken);
+    if (typeof window !== undefined) {
+      const currentToken = window?.localStorage?.getItem('userToken') ? localStorage.getItem('userToken') : false;
+      setToken(currentToken);
+    }
   }, [token]);
 
   const loginAction = async (state, formData) => {

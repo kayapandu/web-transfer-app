@@ -12,15 +12,15 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { useAuth } from '@/app/lib/context/AuthProvider';
 
 export default function LoginForm() {
-  const { loginAction } = useAuth();
+  const {loginAction} = useAuth();
   const [errorMessage, dispatch] = useFormState(loginAction, "");
 
   return (
     <form action={dispatch} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
       <h1 className={`${lusitana.className} mb-3 text-lg self-center`}>
-          Didn't have account ? <a href='/register' className='text-orange-500 hover:text-blue-600'>Register</a>
-        </h1>
+        {`Didn't have account ?`} <a href='/register' className='text-orange-500 hover:text-blue-600'>Register</a>
+      </h1>
         
         <div className="w-full">
           <div>

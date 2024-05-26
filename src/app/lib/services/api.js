@@ -1,10 +1,6 @@
 import axios from "axios";
 
-let urls = {
-    development: 'http://localhost:9001/',
-    production: 'https://your-production-url.com/'
-}
-
+const BASE_URL = 'https://express-flip-kayapandu-kayapandus-projects.vercel.app';
 const TIMEOUT = 20000;
 const HEADERS = {
   'Content-Type': 'application/json',
@@ -14,7 +10,7 @@ const HEADERS = {
 };
 
 class ApiService {
-    constructor({ baseURL = urls[process.env.NODE_ENV], timeout = TIMEOUT, headers = HEADERS }) {
+    constructor({ baseURL = BASE_URL, timeout = TIMEOUT, headers = HEADERS }) {
       const client = axios.create({
         baseURL,
         timeout,

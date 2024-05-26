@@ -44,9 +44,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Didn't have account yet?
-          </p>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">{`Didn't have account yet?`}</p>
         </a>
 
       </div>

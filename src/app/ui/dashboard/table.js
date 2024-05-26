@@ -13,7 +13,7 @@ export default function Table() {
 
   const renderTableContent = () =>               
     (transactionHistory?.map((item, i) => (
-      <tr className="bg-white border-b">
+      <tr className="bg-white border-b" key={`transaction-history-${i+1}`}>
         <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap">
             {i+1}
         </th>
